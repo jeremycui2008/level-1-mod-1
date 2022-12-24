@@ -33,16 +33,16 @@ if __name__ == '__main__':
     draw_background()
 
     # TODO 1) Create an empty list of turtles
-
+    DIE=turtle.Turtle()
     # TODO 2) Create a new turtle and set its shape to 'turtle
-
+    DIE.shape("turtle")
     # TODO 3) Set the turtle's speed to 3
-
+    DIE.speed(3)
     # TODO 4) Set the turtle's pen up
-
+    DIE.penup()
     # TODO 5) Use the turtle's goto() method to set its position on the left
     #  side of the screen
-
+    DIE.goto(-400,80)
     # TODO 6) use a loop to repeat the previous instructions and create
     #  8 turtles lined up on the left side of the screen
     #  *HINT* click on the window to print the corresponding x, y location
