@@ -7,7 +7,6 @@ from PIL import Image
 
 # ================= Instructions at the bottom of this file ===================
 
-
 def screen_clicked(x, y):
     print('You pressed: x=' + str(x) + ', y=' + str(y))
 
@@ -33,7 +32,7 @@ if __name__ == '__main__':
     draw_background()
 
     # TODO 1) Create an empty list of turtles
-    DIE=turtle.Turtle()
+    empty_list=[bill,jill,azathoth,satan,krampus,wendigo,death,beelzebub,lucifer]
     # TODO 2) Create a new turtle and set its shape to 'turtle
     DIE.shape("turtle")
     # TODO 3) Set the turtle's speed to 3
@@ -46,9 +45,12 @@ if __name__ == '__main__':
     # TODO 6) use a loop to repeat the previous instructions and create
     #  8 turtles lined up on the left side of the screen
     #  *HINT* click on the window to print the corresponding x, y location
-
+    for i in range (empty_list):
+        turtle.Turtle=empty_list[i]
+        turtle.Turtle=empty_list[i].goto(-400,i*20)
     # TODO 7) Move each turtle forward a random distance between 1 and 20
-
+    bill=turtle.Turtle()
+    bill.move(1)
     # TODO 8) Create a loop to keep moving each turtle until a turtle
     #  crosses the finish line
     #  *HINT* click on the window to print the corresponding x, y location

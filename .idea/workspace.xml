@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0f25135b-4895-43bf-9c0a-5fce7fb83569" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/_01_creating_objects/_b_intro_to_objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/_01_creating_objects/_b_intro_to_objects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_01_creating_objects/_c_turtle_race.py" beforeDir="false" afterPath="$PROJECT_DIR$/_01_creating_objects/_c_turtle_race.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +28,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/league&quot;
+    &quot;ToolWindowPython Packages.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jeremycui&quot;
   }
 }</component>
   <component name="RunManager" selected="Python._c_turtle_race">
@@ -50,6 +54,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="_b_intro_to_objects" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="level-1-mod-1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.10" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/_01_creating_objects" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/_01_creating_objects/_b_intro_to_objects.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="_c_turtle_race" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="level-1-mod-1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -57,9 +82,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="/usr/local/bin/python3.10" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/_01_creating_objects" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/_01_creating_objects/_c_turtle_race.py" />
@@ -102,6 +127,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python._c_turtle_race" />
+        <item itemvalue="Python._b_intro_to_objects" />
         <item itemvalue="Python tests.Python tests in _b_intro_to_objects.py" />
         <item itemvalue="Python tests.Python tests for _b_intro_to_objects.CreatingObjectsTests.test_1" />
         <item itemvalue="Python._a_objects_demo" />
@@ -118,5 +144,16 @@
       <updated>1671238500996</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
