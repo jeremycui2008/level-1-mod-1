@@ -32,8 +32,9 @@ if __name__ == '__main__':
     draw_background()
 
     # TODO 1) Create an empty list of turtles
-    empty_list=[bill,jill,azathoth,satan,krampus,wendigo,death,beelzebub,lucifer]
+    empty_list=['bill','jill','azathoth','satan','krampus','wendigo','death','beelzebub','lucifer']
     # TODO 2) Create a new turtle and set its shape to 'turtle
+    DIE=turtle.Turtle()
     DIE.shape("turtle")
     # TODO 3) Set the turtle's speed to 3
     DIE.speed(3)
