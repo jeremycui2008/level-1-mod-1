@@ -27,6 +27,7 @@ class NetflixQueue:
         self.movies.append(movie)
 
     def get_movie(self, movie_number):
+        #self.sort_movies_by_rating()
         return self.movies[movie_number]
 
     def sort_movies_by_rating(self):
@@ -47,9 +48,9 @@ if __name__ == '__main__':
     popcorn=Movie('popcorn',5)
     soda=Movie('soda',2)
     ticket=Movie('ticket',5)
-    glasses=Movie('glasses',5)
+    glasses=Movie('glasses',45)
     film=Movie('film',5)
-    movie=Movie('title',99)
+    movie=Movie('trolled',99)
     # TODO 2) Use the Movie class to get the ticket price of one of your movies.
     print(soda.get_ticket_price())
     # TODO 3) Instantiate a NetflixQueue object.
@@ -65,4 +66,4 @@ if __name__ == '__main__':
     # TODO 6) Use your NetflixQueue object to finish the sentence "the best movie is...."
     print('the best movie is' + (breaking_bad.get_best_movie().to_string()))
     # TODO 7) Use your NetflixQueue to finish the sentence "the second best movie is...."
-
+    print('the second best movie is' + breaking_bad.get_movie(1).to_string())
