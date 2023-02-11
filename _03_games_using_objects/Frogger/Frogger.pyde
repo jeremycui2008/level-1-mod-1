@@ -1,15 +1,14 @@
 
 
-
-
 def setup():
     # 1. Use the size function to set the size of your sketch
     size(800,600)
     # 2. Create 2 global variables for the background and the frog
     # using the loadImage("frog.png") function. For example:
-    global bg, frog
+    global bg, frog, Car
     bg = loadImage("froggerBackground.png")
     frog = loadImage("frog.png")
+    Car = Car.Car()
     # 3. Use the resize method to set the size of the background variable
     # to the width and height of the sketch. Resize the frog to an
     # appropriate size.
@@ -17,23 +16,24 @@ def setup():
     global frog_x, frog_y
     frog_x=100
     frog_y=100
-
-
+    
+    
 def draw():
-    global frog_x, frog_y
+    global frog_x, frog_y, Car
     # 4. Use the background function to draw the background
     background(bg)
     # 5. Use the image function to draw the frog.
     # Run the program and check the background and frog are displayed.
     image(frog,frog_x,frog_y)
     frog.resize(50,50)
+    
 
     print(key)
     # 6. Create global frog_x and frog_y variables in the setup function
     # and use them when drawing the frog. You will also have to put the
     # following in the draw function:
 def keyPressed():
-    global frog_x, frog_y
+    global frog_x, frog_y, Car
     if key == CODED:
         print(key)
         if keyCode == UP:
@@ -54,36 +54,41 @@ def keyPressed():
             frog_x-=10
     # 7. Use the Car class below to create a global car object in the
     # setup function and call the update and draw functions here.
-
+    Car.draw()
+    Car.update()
     # 8. Create an intersects method that checks whether the frog collides
     # with the car. If there's a collision, move the frog back to the starting
     # point.
-    if Use pygame.frog.colliderect(Car):
-
+def intersects(car):
+    if frog_y > car.y and frog_y < car.y + 50 and frog_x > car.x and frog_x < car.x + car.size:
+        return True;
+    else:
+        return False;
 
     # 9. Create more car objects of different lengths, speed, and size
 
 class Car:
-    def __init__(self, x, y, length, speed):
-        self.x = 100
-        self.y = 100
-        self.length = 50
-        self.speed = 1
-
+    
+    def __init__(self, Car_x, Car_y, Car_length, Car_speed):
+        self.Car_x = 100
+        self.Car_y = 100
+        self.Car_length = 50
+        self.Car_speed = 1
+        
         self.car_image = loadImage("carRight.png")
-        if self.speed < 0:
+        if self.Car_speed < 0:
             self.car_image = loadImage("carLeft.png")
-
-        self.car_image.resize(self.length, self.length / 3)
-
+        
+        self.car_image.resize(Car_length, Car_length / 3)
+        
     def draw(self):
-        image(self.car_image, self.x, self.y)
-
+        image(self.Car, self.Car_x, self.Car_y)
+    
     def update(self):
-        self.x += self.speed
-
-        if self.x > width:
-            self.x = -self.length
-
-        if self.x < -self.length:
-            self.x = width
+        self.Car_x += self.Car_speed
+        
+        if self.Car_x > width:
+            self.Car_x = -self.Car_length
+            
+        if self.Car_x < -self.Car_length:
+            self.Car_x = width
