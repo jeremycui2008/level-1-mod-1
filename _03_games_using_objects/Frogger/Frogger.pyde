@@ -1,14 +1,12 @@
-
-
 def setup():
     # 1. Use the size function to set the size of your sketch
     size(800,600)
     # 2. Create 2 global variables for the background and the frog
     # using the loadImage("frog.png") function. For example:
-    global bg, frog, Car
+    global bg, frog, car
     bg = loadImage("froggerBackground.png")
     frog = loadImage("frog.png")
-    Car = Car.Car()
+    car = Car(100, 200, 200, 5)
     # 3. Use the resize method to set the size of the background variable
     # to the width and height of the sketch. Resize the frog to an
     # appropriate size.
@@ -19,7 +17,7 @@ def setup():
     
     
 def draw():
-    global frog_x, frog_y, Car
+    global frog_x, frog_y, car, bg
     # 4. Use the background function to draw the background
     background(bg)
     # 5. Use the image function to draw the frog.
@@ -32,8 +30,21 @@ def draw():
     # 6. Create global frog_x and frog_y variables in the setup function
     # and use them when drawing the frog. You will also have to put the
     # following in the draw function:
+        
+    # 7. Use the Car class below to create a global car object in the
+    # setup function and call the update and draw functions here.
+    
+    car.update()
+    car.draw()
+    
+    # 8. Create an intersects method that checks whether the frog collides
+    # with the car. If there's a collision, move the frog back to the starting
+    # point.
+    
+    # 9. Create more car objects of different lengths, speed, and size
+    
 def keyPressed():
-    global frog_x, frog_y, Car
+    global frog_x, frog_y, car
     if key == CODED:
         print(key)
         if keyCode == UP:
@@ -52,28 +63,23 @@ def keyPressed():
             # Frog X position goes left
             print("left")
             frog_x-=10
-    # 7. Use the Car class below to create a global car object in the
-    # setup function and call the update and draw functions here.
-    Car.draw()
-    Car.update()
-    # 8. Create an intersects method that checks whether the frog collides
-    # with the car. If there's a collision, move the frog back to the starting
-    # point.
+
+    
 def intersects(car):
-    if frog_y > car.y and frog_y < car.y + 50 and frog_x > car.x and frog_x < car.x + car.size:
+    if frog_y >= car_y and frog_y < car_y + 50 and frog_x > car_x and frog_x < car_x + car_length:
+        Frog.translate(100,100)
         return True;
     else:
         return False;
 
-    # 9. Create more car objects of different lengths, speed, and size
 
 class Car:
     
     def __init__(self, Car_x, Car_y, Car_length, Car_speed):
-        self.Car_x = 100
-        self.Car_y = 100
-        self.Car_length = 50
-        self.Car_speed = 1
+        self.Car_x = Car_x
+        self.Car_y = Car_y
+        self.Car_length = Car_length
+        self.Car_speed = Car_speed
         
         self.car_image = loadImage("carRight.png")
         if self.Car_speed < 0:
@@ -82,7 +88,7 @@ class Car:
         self.car_image.resize(Car_length, Car_length / 3)
         
     def draw(self):
-        image(self.Car, self.Car_x, self.Car_y)
+        image(self.car_image, self.Car_x, self.Car_y)
     
     def update(self):
         self.Car_x += self.Car_speed
