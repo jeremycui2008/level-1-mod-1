@@ -1,23 +1,27 @@
+
+
 def setup():
     # 1. Use the size function to set the size of your sketch
     size(800,600)
     # 2. Create 2 global variables for the background and the frog
     # using the loadImage("frog.png") function. For example:
-    global bg, frog, car
+    global bg, frog, car, Car,death, guh
     bg = loadImage("froggerBackground.png")
     frog = loadImage("frog.png")
     car = Car(100, 200, 200, 5)
+    death = Car(150,100,200,200)
+    guh = Car(300,300,200,3)
     # 3. Use the resize method to set the size of the background variable
     # to the width and height of the sketch. Resize the frog to an
     # appropriate size.
     bg.resize(800,600)
     global frog_x, frog_y
-    frog_x=100
-    frog_y=100
+    frog_x=400
+    frog_y=550
     
     
 def draw():
-    global frog_x, frog_y, car, bg
+    global frog_x, frog_y, car, bg, Car, death, guh
     # 4. Use the background function to draw the background
     background(bg)
     # 5. Use the image function to draw the frog.
@@ -27,7 +31,10 @@ def draw():
     
 
     print(key)
-    # 6. Create global frog_x and frog_y variables in the setup function
+    intersects(car)
+    intersects(death)
+    intersects(guh)
+        # 6. Create global frog_x and frog_y variables in the setup function
     # and use them when drawing the frog. You will also have to put the
     # following in the draw function:
         
@@ -37,10 +44,15 @@ def draw():
     car.update()
     car.draw()
     
+    death.update()
+    death.draw()
+    
+    guh.update
+    guh.draw()
     # 8. Create an intersects method that checks whether the frog collides
     # with the car. If there's a collision, move the frog back to the starting
     # point.
-    
+
     # 9. Create more car objects of different lengths, speed, and size
     
 def keyPressed():
@@ -66,13 +78,14 @@ def keyPressed():
 
     
 def intersects(car):
-    if frog_y >= car_y and frog_y < car_y + 50 and frog_x > car_x and frog_x < car_x + car_length:
-        Frog.translate(100,100)
+    global frog_x, frog_y, Car, death, guh
+    if frog_y > car.Car_y and frog_y < car.Car_y + 50 and frog_x > car.Car_x and frog_x < car.Car_x + car.Car_length:
+        frog_x = 400;
+        frog_y = 550;
         return True;
     else:
         return False;
-
-
+    
 class Car:
     
     def __init__(self, Car_x, Car_y, Car_length, Car_speed):

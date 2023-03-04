@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f25135b-4895-43bf-9c0a-5fce7fb83569" name="Changes" comment="cool">
+      <change beforePath="$PROJECT_DIR$/.idea/level-1-mod-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/level-1-mod-1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_03_games_using_objects/Frogger/Frogger.pyde" beforeDir="false" afterPath="$PROJECT_DIR$/_03_games_using_objects/Frogger/Frogger.pyde" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676077245178</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="cool">
+      <created>1676681857403</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676681857403</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,5 +229,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cool" />
     <option name="LAST_COMMIT_MESSAGE" value="cool" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/_03_games_using_objects/pong/Paddle.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
