@@ -11,7 +11,7 @@ def setup():
     # 1. Set the size of your window to at least width = 800, height = 600
     size(800,600)
     # 2. Make a global ball variable, for example:
-    ball=Ball(0,0,5,20)
+    ball=Ball(0,10,5,20)
     # 3. Initialize your ball variable to a new Ball(), for example:
     
     # 4. Make a global paddle variable.
@@ -41,11 +41,15 @@ def draw():
     #     Call the ball object's collision() method and pass the
     #     paddle object as an input variable.
     #     Does the ball bounce off the paddel?
-
+    ball.collision(paddle)
     # 12. End the game when the ball goes below the bottom of the screen.
     #     You can use noLoop() to freeze the game and text() to print text
     #     on the screen.
-
+    if ball.y>height:
+        textSize(32)
+        fill('#FFFFFF')
+        text("YOU SUCK!!!!!!",width/3, height/2)
+        noLoop()
     # 13. Figure out how to add a score to the game so every bounce off
     #     the paddle increases the player socre
 
@@ -64,12 +68,16 @@ def keyPressed():
         started = True 
     elif key == CODED:
         if keyCode == LEFT:
+            paddle.x_speed =-5
+        if keyCode == RIGHT:
+            paddle.x_speed =5
             
-            pass
+        
 
 
 # 10. Set paddle.x_speed to 0 when the LEFT or RIGHT arrow keys are released.
 #     Does the paddle stop when the keys are released?
 def keyReleased():
     if key == CODED:
+        paddle.x_speed=0
         pass
