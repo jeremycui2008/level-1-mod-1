@@ -3,11 +3,12 @@ Create a single player Pong game
 """
 from Ball import Ball
 from Paddle import Paddle
-global started, ball, paddle
+global started, ball, paddle, x
 started = False
 
 def setup():
-    global started, ball, paddle
+    global started, ball, paddle, x
+    x=0
     # 1. Set the size of your window to at least width = 800, height = 600
     size(800,600)
     # 2. Make a global ball variable, for example:
@@ -19,7 +20,7 @@ def setup():
     # 5. Initialize your paddle variable to a new Paddle() for example:
     
 def draw():
-    global started, ball, paddle
+    global started, ball, paddle, x
     if not started:
         textSize(32)
         fill(0)
@@ -52,7 +53,12 @@ def draw():
         noLoop()
     # 13. Figure out how to add a score to the game so every bounce off
     #     the paddle increases the player socre
+    if ball.currently_intersects==True:
+        x += 1
 
+    fill('#FFFFFF')
+    text("score:"+str(x),width/7,height/7)
+    
     # *EXTRA*
     # Can you figure out how to make a 2 player pong game with paddles on
     # the left and right on the screen?
