@@ -1,9 +1,12 @@
 global bg_color, sun_colors, sun_radius
 
+
+
 sun_radius = 250
 bg_color = color(31, 0, 48)
 
 # RGB colors
+
 sun_colors = [
   color(212, 202, 11), 
   color(214, 198, 30), 
@@ -24,20 +27,23 @@ sun_colors = [
 """
 
 def setup():
-    pass
+    global bg_color, sun_colors, sun_radius
     # TODO 1) Set the size of your sketch
-
+    size(800,800)
     """
     * PART I: Drawing the sun
     * See 1st image 
     """
 
     # TODO 2) Draw the bg_color background color using the background() function
-    
+    background(bg_color)
+
     # TODO 3) Draw an ellipse for the sun in the center of the window
     # Use fill(sun_colors[0]) to make it yellow
     # Use noStroke() to remove the black outline
-    
+    fill(sun_colors[0])
+    ellipse(400,400,sun_radius,sun_radius)
+    noStroke()
     # Do you see a yellow sun like in the 1st image?
     # If not, fix your code before proceeding.
     
@@ -50,11 +56,17 @@ def setup():
     """
     
     # Call the loadPixels() function to load the pixels list variable.
+    loadPixels()
     
     # Loop through all the pixels in your window.
     # A pixel is a 1x1 square, so if your window width is 600 and the 
     # height is 400 (600x400), then there are 600 * 400 = 240,000 pixels
-        
+    for i in range (64000):
+        if pixels[i]:
+            y = i/width
+            step = map(y, sun_top_y, sun_bottom_y, 0, 1)
+            interpolate_color(sun_colors, step)
+            updatePixels(i)
         # We want to change the color of our sun so use an if statement
         # to check if the pixel is the color of the yellow circle.
         # pixels[i] is the color of the pixel.
