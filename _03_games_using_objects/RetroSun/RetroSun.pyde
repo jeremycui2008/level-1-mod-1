@@ -47,13 +47,13 @@ def setup():
     # Do you see a yellow sun like in the 1st image?
     # If not, fix your code before proceeding.
     
-    """
-    * PART II: Drawing a color gradient on the sun
-    * See 2nd image
-    *
-    * This will make the sun have gradually different colors from the 
-    * top to bottom
-    """
+
+    # PART II: Drawing a color gradient on the sun
+    # See 2nd image
+    #
+    #This will make the sun have gradually different colors from the 
+    # top to bottom
+    
     
     # Call the loadPixels() function to load the pixels list variable.
     loadPixels()
@@ -61,12 +61,18 @@ def setup():
     # Loop through all the pixels in your window.
     # A pixel is a 1x1 square, so if your window width is 600 and the 
     # height is 400 (600x400), then there are 600 * 400 = 240,000 pixels
-    for i in range (64000):
-        if pixels[i]:
-            y = i/width
-            step = map(y, sun_top_y, sun_bottom_y, 0, 1)
+
+
+    for i in range(640000):
+        y = i / width
+        step = map(y, 150, 650, 0, 1)
+        loadPixels()
+        if sun_colors[0] == pixels [i]:
             interpolate_color(sun_colors, step)
-            updatePixels(i)
+            updatePixels()
+        
+        
+            
         # We want to change the color of our sun so use an if statement
         # to check if the pixel is the color of the yellow circle.
         # pixels[i] is the color of the pixel.
@@ -95,13 +101,12 @@ def setup():
 
 def draw():
     pass
-    """
-    * PART III: Drawing the missing sections at the bottom of the sun
-    * See 3rd image
-    *
-    * The missing parts of the sun are created by drawing rectangles
-    * over the sun with the same color as the background.
-    """
+    # PART III: Drawing the missing sections at the bottom of the sun
+    # See 3rd image
+    #
+    # The missing parts of the sun are created by drawing rectangles
+    # over the sun with the same color as the background.
+
 
     # Call updatePixels() to redraw the background and sun
     
@@ -119,12 +124,11 @@ def draw():
    
     # Do you see a section missing from the sun like in the 3rd image?
 
-    """
-    * PART IV: Moving the missing sun sections
-    *
-    * To move a section upwards each rectangle's y value needs to decrease.
-    * To make the section get smaller, its height needs to also decrease.
-    """
+    # PART IV: Moving the missing sun sections
+    #
+    # To move a section upwards each rectangle's y value needs to decrease.
+    # To make the section get smaller, its height needs to also decrease.
+    
    
     # Decrease the y variable of the rectangular section created in part III.
     # If there isn't a variable declare a variable OUTSIDE of the draw
@@ -150,12 +154,12 @@ def draw():
     # Add code to reset the height of the rectangle when it moves back to
     # the bottom of the sun.
     # See image 5
-   
-    """
-    * PART V: Moving more missing sun sections
-    *
-    * Using a loop to manage moving multiple missing sun sections 
-    """
+
+    
+    # PART V: Moving more missing sun sections
+    #
+    # Using a loop to manage moving multiple missing sun sections 
+    
    
     # Figure out how to create the other missing sun sections using the
     # code you wrote for the 1 missing sun section.
@@ -168,7 +172,7 @@ def draw():
     *
     * If you want to make your retro sun look more unique, try adding
     * reflections and stars.
-    """    
+    """
 
 
 # Variable step should be between 0 and 1, inclusive
