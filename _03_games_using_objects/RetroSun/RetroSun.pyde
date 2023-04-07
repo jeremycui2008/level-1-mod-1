@@ -63,14 +63,14 @@ def setup():
     # height is 400 (600x400), then there are 600 * 400 = 240,000 pixels
 
 
-    for i in range(640000):
+    for i in range(width * height):
         y = i / width
         step = map(y, 150, 650, 0, 1)
-        loadPixels()
+
         if sun_colors[0] == pixels [i]:
-            interpolate_color(sun_colors, step)
-            updatePixels()
-        
+            new_color = interpolate_color(sun_colors, step)
+            pixels [i] = new_color
+    updatePixels()        
         
             
         # We want to change the color of our sun so use an if statement
@@ -106,22 +106,23 @@ def draw():
     #
     # The missing parts of the sun are created by drawing rectangles
     # over the sun with the same color as the background.
-
+    updatePixels()
 
     # Call updatePixels() to redraw the background and sun
     
     # Set the fill() color to bg_color
-
+    fill(bg_color)
     # To draw each rectangle we need to find its x, y, width, height
     # *The y position can be any value within the sun:
-    #   y = width / 2
+    y = width / 2
     # *The height can be any value you choose:
-    #   h = 40
+    h = 40
     # *The x position can be the center of the sun's x position minus the radius:
-    #   x = sun_center_x - sun_radius
+    x = sun_center_x - sun_radius
     # * The width can be 2 times the radius
-    #   w = 2 * sun_radius
-   
+    w = 2 * sun_radius
+    rect(250,250,50,30)
+    print("test")
     # Do you see a section missing from the sun like in the 3rd image?
 
     # PART IV: Moving the missing sun sections
