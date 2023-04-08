@@ -47,13 +47,13 @@ def setup():
     # Do you see a yellow sun like in the 1st image?
     # If not, fix your code before proceeding.
     
-
-    # PART II: Drawing a color gradient on the sun
-    # See 2nd image
-    #
-    #This will make the sun have gradually different colors from the 
-    # top to bottom
-    
+    """
+    * PART II: Drawing a color gradient on the sun
+    * See 2nd image
+    *
+    * This will make the sun have gradually different colors from the 
+    * top to bottom
+    """
     
     # Call the loadPixels() function to load the pixels list variable.
     loadPixels()
@@ -61,18 +61,12 @@ def setup():
     # Loop through all the pixels in your window.
     # A pixel is a 1x1 square, so if your window width is 600 and the 
     # height is 400 (600x400), then there are 600 * 400 = 240,000 pixels
-
-
-    for i in range(width * height):
-        y = i / width
-        step = map(y, 150, 650, 0, 1)
-
-        if sun_colors[0] == pixels [i]:
-            new_color = interpolate_color(sun_colors, step)
-            pixels [i] = new_color
-    updatePixels()        
-        
-            
+    for i in range (64000):
+        if pixels[i]:
+            y = i/width
+            step = map(y, sun_top_y, sun_bottom_y, 0, 1)
+            interpolate_color(sun_colors, step)
+            updatePixels(i)
         # We want to change the color of our sun so use an if statement
         # to check if the pixel is the color of the yellow circle.
         # pixels[i] is the color of the pixel.
@@ -101,35 +95,36 @@ def setup():
 
 def draw():
     pass
-    # PART III: Drawing the missing sections at the bottom of the sun
-    # See 3rd image
-    #
-    # The missing parts of the sun are created by drawing rectangles
-    # over the sun with the same color as the background.
-    updatePixels()
+    """
+    * PART III: Drawing the missing sections at the bottom of the sun
+    * See 3rd image
+    *
+    * The missing parts of the sun are created by drawing rectangles
+    * over the sun with the same color as the background.
+    """
 
     # Call updatePixels() to redraw the background and sun
     
     # Set the fill() color to bg_color
-    fill(bg_color)
+
     # To draw each rectangle we need to find its x, y, width, height
     # *The y position can be any value within the sun:
-    y = width / 2
+    #   y = width / 2
     # *The height can be any value you choose:
-    h = 40
+    #   h = 40
     # *The x position can be the center of the sun's x position minus the radius:
-    x = sun_center_x - sun_radius
+    #   x = sun_center_x - sun_radius
     # * The width can be 2 times the radius
-    w = 2 * sun_radius
-    rect(250,250,50,30)
-    print("test")
+    #   w = 2 * sun_radius
+   
     # Do you see a section missing from the sun like in the 3rd image?
 
-    # PART IV: Moving the missing sun sections
-    #
-    # To move a section upwards each rectangle's y value needs to decrease.
-    # To make the section get smaller, its height needs to also decrease.
-    
+    """
+    * PART IV: Moving the missing sun sections
+    *
+    * To move a section upwards each rectangle's y value needs to decrease.
+    * To make the section get smaller, its height needs to also decrease.
+    """
    
     # Decrease the y variable of the rectangular section created in part III.
     # If there isn't a variable declare a variable OUTSIDE of the draw
@@ -155,12 +150,12 @@ def draw():
     # Add code to reset the height of the rectangle when it moves back to
     # the bottom of the sun.
     # See image 5
-
-    
-    # PART V: Moving more missing sun sections
-    #
-    # Using a loop to manage moving multiple missing sun sections 
-    
+   
+    """
+    * PART V: Moving more missing sun sections
+    *
+    * Using a loop to manage moving multiple missing sun sections 
+    """
    
     # Figure out how to create the other missing sun sections using the
     # code you wrote for the 1 missing sun section.
@@ -173,7 +168,7 @@ def draw():
     *
     * If you want to make your retro sun look more unique, try adding
     * reflections and stars.
-    """
+    """    
 
 
 # Variable step should be between 0 and 1, inclusive
