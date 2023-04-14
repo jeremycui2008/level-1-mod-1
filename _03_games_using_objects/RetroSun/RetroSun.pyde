@@ -27,7 +27,7 @@ sun_colors = [
 """
 
 def setup():
-    global bg_color, sun_colors, sun_radius
+    global bg_color, sun_colors, sun_radius, y, h
     # TODO 1) Set the size of your sketch
     size(800,800)
     """
@@ -61,17 +61,20 @@ def setup():
     # Loop through all the pixels in your window.
     # A pixel is a 1x1 square, so if your window width is 600 and the 
     # height is 400 (600x400), then there are 600 * 400 = 240,000 pixels
-    for i in range (64000):
-        if pixels[i]:
+    for i in range (640000):
+        if pixels[i]==sun_colors[0]:
             y = i/width
-            step = map(y, sun_top_y, sun_bottom_y, 0, 1)
-            interpolate_color(sun_colors, step)
-            updatePixels(i)
+            step = map(y, 400 - sun_radius, 400 + sun_radius, 0, 1)
+            color_p = interpolate_color(sun_colors, step)
+            pixels[i] = color_p
+    updatePixels()
         # We want to change the color of our sun so use an if statement
         # to check if the pixel is the color of the yellow circle.
         # pixels[i] is the color of the pixel.
         # sun_colors[0] is the color of the sun.
-            
+    y = width / 2
+    h = 40
+    
             # If it's the same color we need to map the pixel to a
             # color in our sun_colors list (see 2nd gradient image)
        
@@ -94,7 +97,7 @@ def setup():
 
 
 def draw():
-    pass
+    global y, h
     """
     * PART III: Drawing the missing sections at the bottom of the sun
     * See 3rd image
@@ -104,19 +107,25 @@ def draw():
     """
 
     # Call updatePixels() to redraw the background and sun
-    
+    updatePixels()
     # Set the fill() color to bg_color
-
+    fill(bg_color)
     # To draw each rectangle we need to find its x, y, width, height
     # *The y position can be any value within the sun:
-    #   y = width / 2
+    y-=1
+    h-=1
+    if y<=300:
+        y = width / 2
+    if h<=0:
+        h = 40
+
     # *The height can be any value you choose:
-    #   h = 40
+
     # *The x position can be the center of the sun's x position minus the radius:
-    #   x = sun_center_x - sun_radius
+    x = 400 - sun_radius
     # * The width can be 2 times the radius
-    #   w = 2 * sun_radius
-   
+    w = 2 * sun_radius
+    rect(x,y,w,h)
     # Do you see a section missing from the sun like in the 3rd image?
 
     """
