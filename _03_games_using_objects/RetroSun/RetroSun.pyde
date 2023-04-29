@@ -72,9 +72,12 @@ def setup():
         # to check if the pixel is the color of the yellow circle.
         # pixels[i] is the color of the pixel.
         # sun_colors[0] is the color of the sun.
-    y = 400
-    h = 50
-
+    y = 400 - (sun_radius/4)
+    h = 1
+    x = 400 - sun_radius
+    w = 2 * sun_radius
+    
+    increment = (sun_radius*(sun_radius/4)) / 5
             # If it's the same color we need to map the pixel to a
             # color in our sun_colors list (see 2nd gradient image)
 
@@ -94,6 +97,14 @@ def setup():
 
 
     # Call updatePixels() to apply the changes made to the pixels list
+    
+    
+    #Creating new lis for rectangles
+    rectangles = list()
+    for i in range(5):
+        rectangles.append(Rectangle(x, y, w, h))
+        y += increment
+        h = map(y, 200-(sun_radius/4),200 + sun_radius, 1, 40)
 
 
 def draw():
@@ -112,12 +123,12 @@ def draw():
     fill(bg_color)
     # To draw each rectangle we need to find its x, y, width, height
     # *The y position can be any value within the sun:
-    y-=0.5
-    h-=0.25
-    if y<=300:
-        y = 400
+    y-=0.25
+    h-=0.10
+    if y<=400:
+        y = 450
     if h<=0:
-        h = 50
+        h = 20
 
     
 
@@ -168,11 +179,11 @@ def draw():
     *
     * Using a loop to manage moving multiple missing sun sections
     """
-    
-    sections = list(Rectangle)
-    for i in range(5):
-        sections.append(Rectangle(x, y, w, h))
-        
+    for r in rectangles:
+        r.draw()
+        r.update()
+     
+     
     
 
     # Figure out how to create the other missing sun sections using the
